@@ -1,0 +1,94 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  Update Product
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+
+    <h4 class="name">John Smith</h4>
+    <p class="designation">Software Engineer</p>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/view">
+      <mat-icon class="label">home</mat-icon>
+      <span class="label">View</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/create">
+      <mat-icon>person</mat-icon>
+      <span>Create</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/update">
+      <mat-icon>info</mat-icon>
+      <span>Update</span>
+    </button>
+
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/help">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <form name="productForm" [formGroup]="editForm">
+      <mat-form-field appearance="fill" class="mat-form-field">
+        <mat-label>Product Name</mat-label>
+        <input matInput placeholder="productName" formControlName="productName">
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field" appearance="fill">
+        <mat-select placeholder="Product Category" formControlName="productCategory">
+          <mat-option value="laptop">Laptop</mat-option>
+          <mat-option value="desktop">Desktop</mat-option>
+          <mat-option value="printer">Printer</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill" class="mat-form-field">
+        <mat-label>Model</mat-label>
+        <input matInput placeholder="Model" formControlName="model">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="mat-form-field">
+        <mat-label>Unit Price</mat-label>
+        <input matInput placeholder="Unit Price" formControlName="unitPrice">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="mat-form-field">
+        <mat-label>Quantity</mat-label>
+        <input matInput placeholder="Quantity" formControlName="quantity">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="mat-form-field">
+        <mat-label>image Url</mat-label>
+        <input matInput placeholder="image Url" formControlName="imageUrl">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="mat-form-field">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Description" formControlName="description">
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field">
+        <mat-select placeholder="COLOUR" formControlName="colour">
+          <mat-option value="red">Red</mat-option>
+          <mat-option value="green">Green</mat-option>
+          <mat-option value="black">Black</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+      <button type="submit" (click)="save()">Submit</button>
+    </form>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,87 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    Update Profile
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+      <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+  
+      <h4 class="name">{{login.email}}</h4>
+      <p class="designation">Software Engineer</p>
+  
+      <mat-divider></mat-divider>
+  
+      <!-- <button mat-button class="menu-button" routerLink="/view">
+        <mat-icon class="label">home</mat-icon>
+        <span class="label">View</span>
+      </button> -->
+      <button mat-button class="menu-button" routerLink="/view-users">
+        <mat-icon class="label">home</mat-icon>
+        <span class="label">Users</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/view-profile">
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+      <!-- <button mat-button class="menu-button" routerLink="/update">
+        <mat-icon>info</mat-icon>
+        <span>Update</span>
+      </button> -->
+  
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button" (click)="logOut()" >
+        <mat-icon>help</mat-icon>
+        <span>Log Out</span>
+      </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <form name="viewForm" [formGroup]="editForm">
+
+          <mat-form-field appearance="fill" class="mat-form-field">
+            <mat-label>ID</mat-label>
+           <input matInput placeholder="id" formControlName="id">
+         </mat-form-field>
+
+          <mat-form-field appearance="fill" class="mat-form-field">
+            <mat-label>Name</mat-label>
+           <input matInput placeholder="name" formControlName="name">
+         </mat-form-field>
+   
+         <mat-form-field appearance="fill" class="mat-form-field">
+             <mat-label>Email</mat-label>
+             <input matInput placeholder="email" formControlName="email" readonly="readonly">
+           </mat-form-field>
+ 
+           <mat-form-field appearance="fill" class="mat-form-field">
+             <mat-label>Role</mat-label>
+             <input matInput placeholder="role" formControlName="roles" readonly="readonly">
+           </mat-form-field>
+ 
+           <mat-form-field appearance="fill" class="mat-form-field">
+             <mat-label>Created Date</mat-label>
+             <input matInput placeholder="created Date" formControlName="created_at" readonly="readonly">
+           </mat-form-field>
+ 
+           <mat-form-field appearance="fill" class="mat-form-field">
+             <mat-label>Last Modified Date</mat-label>
+             <input matInput placeholder="Last Modified Date" formControlName="updated_at" readonly="readonly">
+           </mat-form-field>
+        
+        <!-- <mat-form-field appearance="fill" class="mat-form-field">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="password" formControlName="password">
+        </mat-form-field> -->
+  
+        <button type="submit" (click)="save()">Submit</button>
+      </form>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
