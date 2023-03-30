@@ -40,9 +40,9 @@ export class UpdateUserComponent implements OnInit {
   }
   getUserById(uid: any) {
 
-    this.userService.findUserById(uid).subscribe((res) => {
-      console.log(res);
-      this.updateForm(res);
+    this.userService.findUserById(uid).subscribe((res:any) => {
+      console.log(res.user);
+      this.updateForm(res.user);
     })
 
   }

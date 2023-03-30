@@ -17,7 +17,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
@@ -31,6 +31,9 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { ViewAllUsersComponent } from './view-all-users/view-all-users.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { CreateCustomerComponent } from './Customer/create-customer/create-customer.component';
+import { EditCustomerComponent } from './Customer/edit-customer/edit-customer.component';
+import { ViewAllCustomersComponent } from './Customer/view-all-customers/view-all-customers.component';
 
 
 @NgModule({
@@ -45,6 +48,9 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     ViewAllUsersComponent,
     UpdateUserComponent,
     RegisterUserComponent,
+    CreateCustomerComponent,
+    ViewAllCustomersComponent,
+    
 
   ],
   imports: [
@@ -69,7 +75,8 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     HttpClientModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

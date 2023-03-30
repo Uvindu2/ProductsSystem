@@ -23,6 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^14.0.1",
     "@ngneat/until-destroy": "^9.2.3",
     "@popperjs/core": "^2.11.6",
+    "@rxjs/rx": "^4.1.0",
     "angular-bootstrap-md": "^15.0.0",
     "bootstrap": "^5.2.3",
     "rxjs": "~7.5.0",

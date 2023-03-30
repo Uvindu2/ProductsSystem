@@ -24,6 +24,7 @@ export class Product implements IProduct {
       public colour?:string,
       public imageUrl?:string,
       public cartStatus?:boolean,
+      
 
 
     ) {}

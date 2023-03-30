@@ -38,14 +38,19 @@ export class UpdateProductComponent {
    
   })
 }
-getProductById(pid:any){
 
-  this.productService.getProductById(pid).subscribe((res)=>{
 
-    this.product=res;
-    this.updateForm(res);
 
-  })
+  getProductById(pid:any) {
+    this.productService
+    .getProductById(pid)
+    .subscribe((data:any) => {
+   
+      this.product = data.product;
+      console.log(this.product);
+      this.updateForm(this.product);
+    });
+
 }
   save() {
     const product = this.createFrom();

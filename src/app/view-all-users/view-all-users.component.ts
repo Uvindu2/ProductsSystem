@@ -26,16 +26,13 @@ export class ViewAllUsersComponent implements OnInit{
    * be able to query its view for the initialized paginator.
    */
   ngOnInit(){
-
-    this.session=sessionStorage.getItem('email');
-    this.login.email=this.session.replaceAll('"', '');
     
 this.getAllUsers();
   }
 
   getAllUsers() {
-    this.userService.getUsers().subscribe((res) => {
-      this.dataSource.data = res
+    this.userService.getUsers().subscribe((res:any) => {
+      this.dataSource.data = res.listUser
 
     })
   }

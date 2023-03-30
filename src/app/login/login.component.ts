@@ -50,12 +50,13 @@ export class LoginComponent  {
     console.log(data);
     this.loginService.login(data).subscribe((res)=>{
       if(res!=null){
+        console.log(res);
       this.login=res;
     
     sessionStorage.setItem('email',JSON.stringify(this.login.email));
     sessionStorage.setItem('token',JSON.stringify(this.login.token));
 
-      this._router.navigate(['/sidebar']);
+       this._router.navigate(['/sidebar']);
       }
       else{
         alert("invalid email or password")

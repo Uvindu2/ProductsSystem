@@ -31,11 +31,11 @@ export class ViewProfileComponent implements OnInit {
 
     
     this.session=sessionStorage.getItem('email');
-    this.login.email=this.session.replaceAll('"', '');
+    const email=this.session.replaceAll('"', '');
 
-    this.userService.getUserById().subscribe((res) => {
+    this.userService.getUserByEmail(email).subscribe((res:any) => {
       console.log(res);
-      this.updateForm(res);
+      this.updateForm(res.user);
     })
   }
 

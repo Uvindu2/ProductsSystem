@@ -25,11 +25,15 @@ this.getAllProducts();
   }
 
   getAllProducts() {
-    this.productService.getProducts().subscribe((res) => {
-      this.dataSource.data = res
+    this.productService
+    .getProducts()
+    .subscribe((data:any) => {
+   
+      this.dataSource = data.listProduct;
       console.log(this.product);
-    })
+    });
   }
+
 }
 
 

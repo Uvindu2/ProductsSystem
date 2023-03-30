@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class LoginService {
  session:any=null;
 
-  private url = 'http://127.0.0.1:8000/api/login/';
+  private url = 'https://localhost:44330/api/Users/Login';
   private url2 = 'http://127.0.0.1:8000/api/logout/';
 
   
